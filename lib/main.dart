@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
             primarySwatch: Colors.blue,
             fontFamily: 'OpenSans',
           ),
-          initialRoute: homeRoute,
+          initialRoute: splashRoute,
           routes: {
             splashRoute: (context) => const SplashScreen(),
             introRoute: (context) => const IntroScreen(),

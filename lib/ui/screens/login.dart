@@ -63,10 +63,12 @@ class _LoginScreenState extends State<LoginScreen> {
           children: [
             Column(
               children: [
+                SizedBox(height: 50),
                 Image.asset(
                   'assets/images/logo.png',
                   height: 200,
                 ),
+                SizedBox(height: 30),
                 const Text(
                   'Login',
                   style: TextStyle(
@@ -141,7 +143,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           _isPasswordVisible
                               ? Icons.visibility_off
                               : Icons.visibility,
-                           color: const Color(0xFF663274),
+                          color: const Color(0xFF663274),
                         ),
                         onPressed: () {
                           setState(() {
@@ -177,8 +179,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       onPressed: () {
                         if (_validateFields()) {
                           // Perform sign up logic
-                          Navigator.pushReplacementNamed(
-                              context, homeRoute);
+                          Navigator.pushReplacementNamed(context, homeRoute);
                         }
                       },
                       style: ElevatedButton.styleFrom(
@@ -203,7 +204,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       const Text("Don't have an account? "),
                       InkWell(
                         onTap: () {
-                         //website
+                          //website
                         },
                         child: const Text(
                           "Sign Up",

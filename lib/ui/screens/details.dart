@@ -132,14 +132,14 @@ class DetailsScreen extends StatelessWidget {
                         height: 45,
                         child: ElevatedButton(
                           child: Text(
-                            "Booking Inquiry",
+                            "Apply",
                             style: Theme.of(context)
                                 .textTheme
                                 .labelLarge
                                 ?.apply(color: Colors.white),
                           ),
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.blue
+                            backgroundColor: Colors.orange
                           ),
                           onPressed: () {},
                         ),
