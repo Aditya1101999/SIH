@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_job_portal/global.dart';
+import 'package:flutter_job_portal/main.dart';
 import 'package:flutter_job_portal/models/bottomsheet.dart';
+import 'package:flutter_job_portal/ui/screens/arscreen.dart';
 import 'package:flutter_job_portal/ui/screens/screens.dart';
 import 'package:flutter_job_portal/ui/widgets/widgets.dart';
 import 'package:provider/provider.dart';
 
-class HomeScreen extends StatelessWidget{
+class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -28,6 +30,7 @@ class HomeScreen extends StatelessWidget{
                     Row(
                       children: <Widget>[
                         MyDropDownButton(),
+                        
                         Spacer(),
                         IconButton(
                           icon: Icon(
@@ -37,7 +40,8 @@ class HomeScreen extends StatelessWidget{
                           onPressed: () {},
                         ),
                         CircleAvatar(
-                          backgroundImage: NetworkImage("https://picsum.photos/200/300"),
+                          backgroundImage:
+                              NetworkImage("https://picsum.photos/200/300"),
                         )
                       ],
                     ),
@@ -70,11 +74,21 @@ class HomeScreen extends StatelessWidget{
                             child: IconButton(
                               icon: Icon(Icons.tune),
                               onPressed: () {
-                                Provider.of<MyBottomSheetModel>(context, listen: false).changeState();
-
+                                Provider.of<MyBottomSheetModel>(context,
+                                        listen: false)
+                                    .changeState();
                               },
                             ),
                           ),
+                          ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ARScreen(cameraDescriptions)),
+                );
+              },
+              child: Text('View in AR'),
+            )
                         ],
                       ),
                     ),
@@ -112,7 +126,7 @@ class HomeScreen extends StatelessWidget{
               height: 60,
               child: MyBottomNavBar(),
             ),
-            Provider.of<MyBottomSheetModel>(context).visible 
+            Provider.of<MyBottomSheetModel>(context).visible
                 ? Positioned(
                     bottom: 0,
                     left: 0,

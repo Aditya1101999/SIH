@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_job_portal/global.dart';
+import 'package:flutter_job_portal/ui/screens/arscreen.dart';
 
 class DetailsScreen extends StatelessWidget {
   final int id;
@@ -143,11 +144,15 @@ class DetailsScreen extends StatelessWidget {
                           ),
                           onPressed: () {},
                         ),
-                      )
+                        
+                      ),
                     ],
                   ),
+                  
                 ),
+                
               ),
+              
             )
           ],
         ),

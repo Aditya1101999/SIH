@@ -6,8 +6,14 @@ import 'package:flutter_job_portal/ui/screens/login.dart';
 import 'package:flutter_job_portal/ui/screens/screens.dart';
 import 'package:flutter_job_portal/ui/screens/splash_screen.dart';
 import 'package:provider/provider.dart';
+import 'package:camera/camera.dart'; 
 
-void main() => runApp(MyApp());
+late List<CameraDescription> cameraDescriptions;
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  cameraDescriptions = await availableCameras();
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -26,7 +32,7 @@ class MyApp extends StatelessWidget {
             splashRoute: (context) => const SplashScreen(),
             introRoute: (context) => const IntroScreen(),
             loginRoute: (context) => const LoginScreen(),
-            homeRoute:(context) => HomeScreen(),
+            homeRoute: (context) => HomeScreen(),
           }),
     );
   }
