@@ -1,65 +1,37 @@
-import 'package:arkit_plugin/arkit_plugin.dart';
-import 'package:flutter/material.dart';
-import 'package:camera/camera.dart';
+// import 'package:arkit_plugin/arkit_plugin.dart';
+// import 'package:flutter/material.dart';
+// import 'package:vector_math/vector_math.dart';
 
+// class ARScreen extends StatefulWidget {
 
-class ARScreen extends StatefulWidget {
-  final List<CameraDescription> cameras;
+//   ARScreen();
 
-  ARScreen(this.cameras);
+//   @override
+//   _ARScreenState createState() => _ARScreenState();
+// }
 
-  @override
-  _ARScreenState createState() => _ARScreenState();
-}
+// class _ARScreenState extends State<ARScreen> {
+//   late ARKitController arkitController;
+  
+//   get position => null;
 
-class _ARScreenState extends State<ARScreen> {
-  late ARKitController arkitController;
-  late CameraController cameraController;
+//   @override
+//   void dispose() {
+//     arkitController.dispose();
+//     super.dispose();
+//   }
 
-  @override
-  void initState() {
-    super.initState();
+//   @override
+//   Widget build(BuildContext context) => Scaffold(
+//       appBar: AppBar(title: const Text('ARKit in Flutter')),
+//       body: ARKitSceneView(onARKitViewCreated: onARKitViewCreated));
 
-    // Initialize the camera controller
-    cameraController = CameraController(widget.cameras[0], ResolutionPreset.medium);
-    cameraController.initialize().then((_) {
-      if (!mounted) {
-        return;
-      }
-      setState(() {});
-    });
-  }
-
-  @override
-  void dispose() {
-    arkitController.dispose();
-    cameraController.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    if (!cameraController.value.isInitialized) {
-      return Container(); // Show an empty container if the camera is not yet initialized
-    }
-
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('AR Screen with Camera'),
-      ),
-      body: Stack(
-        children: [
-          ARKitSceneView(
-            onARKitViewCreated: (controller) {
-              arkitController = controller;
-              // Add AR content and configurations here.
-            },
-          ),
-          Positioned.fill(
-            child: CameraPreview(cameraController), // Display camera feed
-          ),
-        ],
-      ),
-    );
-  }
-}
+//   void onARKitViewCreated(ARKitController arkitController) {
+//     this.arkitController = arkitController;
+    
+//     final node = ARKitNode(
+//         geometry: ARKitSphere(radius: 0.1), 
+//         position: position ?? Vector3(0, 0, -0.5));
+//     this.arkitController.add(node);
+//   }
+// }

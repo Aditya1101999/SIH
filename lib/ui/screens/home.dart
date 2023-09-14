@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_job_portal/global.dart';
-import 'package:flutter_job_portal/main.dart';
 import 'package:flutter_job_portal/models/bottomsheet.dart';
 import 'package:flutter_job_portal/ui/screens/arscreen.dart';
 import 'package:flutter_job_portal/ui/screens/screens.dart';
@@ -82,10 +81,10 @@ class HomeScreen extends StatelessWidget {
                           ),
                           ElevatedButton(
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ARScreen(cameraDescriptions)),
-                );
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(builder: (context) => ARScreen()),
+                // );
               },
               child: Text('View in AR'),
             )
