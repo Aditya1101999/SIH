@@ -72,3 +72,37 @@ List<JobModel> jobList = [
     ],
   ),
 ];
+// import 'models/job.dart';
+// import 'package:mongo_dart/mongo_dart.dart';
+
+// Future<List<JobModel>> fetchJobListings() async {
+//   String connection =
+//       'dbstring';
+//   Db db = await Db.create(connection);
+//   await db.open();
+//   final jobsCollection = db.collection('jobs');
+
+//   final jobListings = await jobsCollection.find().toList();
+//   db.close();
+
+//   // Convert MongoDB documents to JobModel objects
+//   final jobModels = jobListings.map((job) {
+//     return JobModel(
+//       title: job['title'],
+//       description: job['description'],
+//       iconUrl: job['iconUrl'],
+//       location: job['location'],
+//       salary: job['salary'],
+//       photos: List<String>.from(job['photos']),
+//     );
+//   }).toList();
+
+//   return jobModels;
+// }
+
+// // You can initialize your jobList directly using fetchJobListings
+// List<JobModel> jobList = [];
+
+// void initJobList() async {
+//   jobList = await fetchJobListings();
+// }

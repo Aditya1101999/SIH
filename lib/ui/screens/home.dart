@@ -6,6 +6,7 @@ import 'package:flutter_job_portal/ui/widgets/widgets.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
+  
   @override
   Widget build(BuildContext context) {
     return SafeArea(

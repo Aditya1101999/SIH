@@ -29,6 +29,7 @@ dependencies:
   flutter_local_notifications: ^15.1.1
   location: ^5.0.3
   http: ^1.1.0
+  mongo_dart: ^0.9.1
   #ar_flutter_plugin: ^0.7.3
   #augmented_reality_plugin: ^4.0.1
   #geolocator: ^9.0.2

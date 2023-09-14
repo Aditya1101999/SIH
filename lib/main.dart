@@ -8,6 +8,7 @@ import 'package:flutter_job_portal/ui/screens/splash_screen.dart';
 import 'package:provider/provider.dart';
 
 void main() async {
+//initJobList();
   runApp(MyApp());
 }
 
